@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>
+      <i class="fa fa-book"></i> Books</h2>
+  </div>
+  <!-- <div class="col-md-6">
+    <h5 class="text-right text-secondary">Total Owed: {{totalOwed| currency:"USD":"symbol"}}</h5>
+  </div> -->
+</div>
+<table *ngIf="books?.length > 0" class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Title</th>
+      <th>Autor</th>
+      <th>Descripition</th>
+      <th>Price</th>
+      <!-- <th></th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.description}}</td>
+      <td>{{book.price | currency:"USD":"symbol"}}</td>
+      <!-- <td>
+        <a [routerLink]="['/book/'+book.id]" href="" class="btn btn-secondary btn-sm">
+          <i class="fa fa-arrow-circle-o-right"></i> Purchase</a>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="books?.length == 0">
+  <hr>
+  <h5>There are no books in the system</h5>
+</div>
